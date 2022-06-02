@@ -40,6 +40,15 @@ void GlasterpyScrypt::getLine()
 
     while (true) {
 
+        if(script.eof()) {
+            delete[] currentLine;
+            currentLine = new char[temp.size() + 1];
+            currentLine[temp.size()] = '\0';
+            strncpy(currentLine, temp.c_str(), temp.size());
+            this->len = temp.size() - 1;
+            throw EndOfFile();
+        }
+
         this->script.read(&buffer, 1);
         if(buffer == '\n') {
             delete[] currentLine;
@@ -50,14 +59,6 @@ void GlasterpyScrypt::getLine()
             return void();
         }
 
-        else if(script.eof()) {
-            delete[] currentLine;
-            currentLine = new char[temp.size() + 1];
-            currentLine[temp.size()] = '\0';
-            strncpy(currentLine, temp.c_str(), temp.size());
-            this->len = temp.size() - 1;
-            throw EndOfFile();
-        }
         temp.append(1, buffer);
 
     }

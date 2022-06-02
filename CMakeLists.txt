@@ -4,12 +4,12 @@ set(CMAKE_CXX_FLAGS_RELEASE_INIT "-Wall")
 
 project(Glasterpy)
 
-add_library("GlasterpyScrypt" SHARED "src/GlasterpyScrypt.cpp")
+add_library("GlasterpyScrypt" STATIC "src/GlasterpyScrypt.cpp")
 target_include_directories("GlasterpyScrypt" PRIVATE "include/")
 
-add_library("GlasterpyLexer" SHARED "src/GlasterpyLexer.cpp")
+add_library("GlasterpyLexer" STATIC "src/GlasterpyLexer.cpp")
 target_include_directories("GlasterpyLexer" PRIVATE "include/")
-target_link_directories("GlasterpyLexer" PRIVATE "external-libs/")
+target_link_directories("GlasterpyLexer" PUBLIC "external-libs/")
 target_link_libraries("GlasterpyLexer" PRIVATE "utf8proc")
 
 add_executable("Glasterpy.bin" "main.cpp")
