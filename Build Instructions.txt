@@ -1,0 +1,4 @@
+mkdir build/
+cd build/
+cmake ../
+make                  #./Glasterpy.bin <file> to use
