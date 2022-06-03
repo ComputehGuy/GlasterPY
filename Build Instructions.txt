@@ -1,4 +1,4 @@
 mkdir build/
 cd build/
 cmake ../
-make                  #./Glasterpy.bin <file> to use
+make        # The built executable will be in root/build/bin/ 
