@@ -3,7 +3,7 @@
 #include <string>
 #include <string.h>
 #include <vector>
-#include "utf8proc.h"
+#include "utf8proc.hpp"
 
 #define NEWLINE 0
 #define INDENT 1
