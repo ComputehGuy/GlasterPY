@@ -15,18 +15,12 @@ int main(int argc, char **argv)
         }
 
         catch(const std::exception& e) {
-            for(int i = 0 ; i < script.len ; i ++) {
-                std::cout << script.currentLine[i];
-            }
-            std::cout << std::endl;
+            //GlasterpyLexer::lex(script.currentLine, script.len);
+            std::cout << script.len << std::endl;
+            std::cout << script.currentLine << std::endl;
             break;
         }
-
-        for(int i = 0 ; i < script.len ; i ++) {
-            std::cout << script.currentLine[i];
-        }
-        std::cout << std::endl;
-
+        // GlasterpyLexer::lex(script.currentLine, script.len);
     }
 
     return 0;
