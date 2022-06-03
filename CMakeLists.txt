@@ -14,6 +14,6 @@ target_link_libraries("GlasterpyLexer" PRIVATE "utf8proc")
 
 set(EXECUTABLE_OUTPUT_PATH "bin/")
 add_executable("Glasterpy" "main.cpp")
-target_include_directories("Glasterpy.bin" PRIVATE "include/")
-target_link_libraries("Glasterpy.bin" PRIVATE "GlasterpyScrypt" "GlasterpyLexer")
+target_include_directories("Glasterpy" PRIVATE "include/")
+target_link_libraries("Glasterpy" PRIVATE "GlasterpyScrypt" "GlasterpyLexer")
 
